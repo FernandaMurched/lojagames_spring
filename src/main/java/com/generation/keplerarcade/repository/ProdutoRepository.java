@@ -13,9 +13,9 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long>{
 	// Buscar pro nome
 	public List<Produto> findAllByNomeContainingIgnoreCase(String nome);
 	
-	// Jogos com preço maior que o valor passado 
+	// Seleciona valores maiores que o passado
 	public List<Produto> findAllByPrecoGreaterThan(Double preco);
 	
-	// Jogos com preço menor que o valor passado
+	// Seleciona valores menores que o passado
 	public List<Produto> findAllByPrecoLessThan(Double preco);
 }
