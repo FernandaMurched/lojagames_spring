@@ -33,7 +33,9 @@ public class Produto {
 	private Double preco;
 	
 	@Column(length = 5000)
-	private String imgUrl;
+	@NotBlank(message = "É obrigatório preencher o atributo foto!")
+	@Size(min = 10, max = 5000, message = "A URL da imagem deve ter no mínimo 10 e no máximo 5000 caracteres")
+	private String foto;
 	
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
@@ -79,15 +81,12 @@ public class Produto {
 		this.preco = preco;
 	}
 
-	public String getImgUrl() {
-		return imgUrl;
+	public String getFoto() {
+		return foto;
 	}
 
-	public void setImgUrl(String imgUrl) {
-		this.imgUrl = imgUrl;
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
-	
-	
-	
 
 }
