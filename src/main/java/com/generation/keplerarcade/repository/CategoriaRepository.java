@@ -9,6 +9,9 @@ import com.generation.keplerarcade.model.Categoria;
 
 @Repository
 public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
-	
-	public List<Categoria> findAllByNomeContainingIgnoreCase(String descricao);
+
+	public List<Categoria> findAllByDescricaoContainingIgnoreCase(String descricao);
+
+	public List<Categoria> findAllByClassificacaoContainingIgnoreCase(String classificacao);
+
 }
